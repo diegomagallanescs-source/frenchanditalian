@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flashcards — EuroLingo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-brand"><a href="index.html">🌍 EuroLingo</a></div>
+  <div class="nav-links">
+    <a class="nav-link" href="learn.html">Learn</a>
+    <a class="nav-link" href="flashcards.html">Flashcards</a>
+    <a class="nav-link" href="culture.html">Culture</a>
+    <a class="nav-link" href="match.html">Match</a>
+  </div>
+  <div class="nav-lang">
+    <button class="lang-btn" data-lang="french">🇫🇷 French</button>
+    <button class="lang-btn" data-lang="italian">🇮🇹 Italian</button>
+  </div>
+</nav>
+
+<main class="page-container">
+  <div class="page-header">
+    <h1 id="lang-title">Flashcards</h1>
+    <span class="subtitle">Click the card to flip · Space · Arrow keys to navigate</span>
+  </div>
+
+  <div class="tab-switcher" style="margin-bottom:1.25rem">
+    <button class="tab-btn active" data-tab="phrases">💬 Phrases</button>
+    <button class="tab-btn" data-tab="words">📖 Words</button>
+  </div>
+
+  <div class="category-filter" id="category-tabs"></div>
+
+  <div class="flashcard-layout">
+
+    <div class="flashcard-scene">
+      <div class="flashcard" id="flashcard">
+        <div class="card-face card-front" id="card-front"></div>
+        <div class="card-face card-back" id="card-back"></div>
+      </div>
+      <div class="empty-state" id="empty-state" style="display:none">
+        No cards in this category.
+      </div>
+    </div>
+
+    <div class="flashcard-controls">
+      <button class="fc-btn fc-btn--icon" id="btn-prev" title="Previous (←)">‹</button>
+      <span class="card-counter" id="card-counter">— / —</span>
+      <button class="fc-btn fc-btn--icon" id="btn-next" title="Next (→)">›</button>
+    </div>
+
+    <div class="flashcard-controls">
+      <button class="fc-btn" id="btn-shuffle" title="Shuffle deck">🔀 Shuffle</button>
+      <button class="fc-btn" id="btn-restart" title="Restart from beginning">↺ Restart</button>
+    </div>
+
+  </div>
+</main>
+
+<script src="french.js"></script>
+<script src="italian.js"></script>
+<script src="speech.js"></script>
+<script src="app.js"></script>
+<script src="flashcards.js"></script>
+</body>
+</html>

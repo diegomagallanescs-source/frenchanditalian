@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EuroLingo — French & Italian for Your Trip</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-brand">🌍 EuroLingo</div>
+  <div class="nav-links">
+    <a class="nav-link" href="learn.html">Learn</a>
+    <a class="nav-link" href="flashcards.html">Flashcards</a>
+    <a class="nav-link" href="culture.html">Culture</a>
+    <a class="nav-link" href="match.html">Match</a>
+  </div>
+  <div class="nav-lang">
+    <button class="lang-btn" data-lang="french">🇫🇷 French</button>
+    <button class="lang-btn" data-lang="italian">🇮🇹 Italian</button>
+  </div>
+</nav>
+
+<main class="landing">
+  <div class="landing-eyebrow">Your European Language Companion</div>
+  <h1 class="landing-title">Learn <em>French</em><br>& <em>Italian</em></h1>
+  <p class="landing-sub">100 essential words. 100 real phrases. Native pronunciation. Culture tips. All built for your trip.</p>
+
+  <div class="lang-choice">
+    <div class="lang-card" id="card-french" onclick="selectLang('french')">
+      <div class="lang-card__flag">🇫🇷</div>
+      <div class="lang-card__name">French</div>
+      <div class="lang-card__sub">Paris & beyond</div>
+    </div>
+    <div class="lang-card" id="card-italian" onclick="selectLang('italian')">
+      <div class="lang-card__flag">🇮🇹</div>
+      <div class="lang-card__name">Italian</div>
+      <div class="lang-card__sub">Rome, Florence & more</div>
+    </div>
+  </div>
+
+  <button class="start-btn" onclick="startLearning()">
+    Start Learning →
+  </button>
+
+  <div class="features-row">
+    <span class="feature-chip">🔊 Native pronunciation</span>
+    <span class="feature-chip">🃏 Flashcards</span>
+    <span class="feature-chip">🎯 Matching game</span>
+    <span class="feature-chip">🏛️ Culture & gestures</span>
+    <span class="feature-chip">✈️ Trip-ready phrases</span>
+  </div>
+</main>
+
+<script src="french.js"></script>
+<script src="italian.js"></script>
+<script src="speech.js"></script>
+<script src="app.js"></script>
+<script>
+  let selectedLang = App.getCurrentLang();
+
+  function selectLang(lang) {
+    selectedLang = lang;
+    document.getElementById('card-french').classList.toggle('selected', lang === 'french');
+    document.getElementById('card-italian').classList.toggle('selected', lang === 'italian');
+    App.setCurrentLang(lang);
+  }
+
+  function startLearning() {
+    App.setCurrentLang(selectedLang);
+    window.location.href = 'learn.html';
+  }
+
+  // Init nav lang buttons
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === selectedLang);
+    btn.addEventListener('click', () => selectLang(btn.dataset.lang));
+  });
+
+  // Highlight selected card on load
+  selectLang(selectedLang);
+</script>
+</body>
+</html>

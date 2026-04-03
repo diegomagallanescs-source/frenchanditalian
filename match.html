@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Match — EuroLingo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-brand"><a href="index.html">🌍 EuroLingo</a></div>
+  <div class="nav-links">
+    <a class="nav-link" href="learn.html">Learn</a>
+    <a class="nav-link" href="flashcards.html">Flashcards</a>
+    <a class="nav-link" href="culture.html">Culture</a>
+    <a class="nav-link" href="match.html">Match</a>
+  </div>
+  <div class="nav-lang">
+    <button class="lang-btn" data-lang="french">🇫🇷 French</button>
+    <button class="lang-btn" data-lang="italian">🇮🇹 Italian</button>
+  </div>
+</nav>
+
+<main class="page-container">
+  <div class="match-header">
+    <h1 id="lang-title">Match</h1>
+    <span class="score-display" id="score-display">Score: 0</span>
+  </div>
+  <p class="subtitle" style="margin-bottom:1.5rem;font-style:italic;color:var(--muted)">
+    Match the foreign word or phrase to its English meaning. Tap 🔊 to hear it first.
+  </p>
+
+  <div class="tab-switcher" style="margin-bottom:1.25rem">
+    <button class="tab-btn active" data-tab="phrases">💬 Phrases</button>
+    <button class="tab-btn" data-tab="words">📖 Words</button>
+  </div>
+
+  <div class="category-filter" id="quiz-category-tabs"></div>
+
+  <div class="match-status" id="match-status">Loading…</div>
+
+  <div class="match-columns">
+    <div>
+      <div class="match-column-label">Foreign</div>
+      <div id="foreign-list"></div>
+    </div>
+    <div>
+      <div class="match-column-label">English</div>
+      <div id="english-list"></div>
+    </div>
+  </div>
+
+  <div style="text-align:center">
+    <button class="btn-next-round" id="btn-next-round">Next Round →</button>
+  </div>
+
+</main>
+
+<script src="french.js"></script>
+<script src="italian.js"></script>
+<script src="speech.js"></script>
+<script src="app.js"></script>
+<script src="quiz.js"></script>
+</body>
+</html>

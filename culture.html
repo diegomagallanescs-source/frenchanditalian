@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Culture — EuroLingo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-brand"><a href="index.html">🌍 EuroLingo</a></div>
+  <div class="nav-links">
+    <a class="nav-link" href="learn.html">Learn</a>
+    <a class="nav-link" href="flashcards.html">Flashcards</a>
+    <a class="nav-link" href="culture.html">Culture</a>
+    <a class="nav-link" href="match.html">Match</a>
+  </div>
+  <div class="nav-lang">
+    <button class="lang-btn" data-lang="french">🇫🇷 French</button>
+    <button class="lang-btn" data-lang="italian">🇮🇹 Italian</button>
+  </div>
+</nav>
+
+<main class="page-container">
+  <div class="page-header">
+    <h1 id="lang-title">Culture</h1>
+    <span class="subtitle">People, customs, gestures & things to know</span>
+  </div>
+
+  <!-- Overview + People + Dining -->
+  <div class="culture-columns">
+    <div class="culture-card">
+      <h3>🌍 Overview</h3>
+      <p id="culture-overview"></p>
+    </div>
+    <div class="culture-card">
+      <h3>🤝 The People</h3>
+      <p id="culture-people"></p>
+    </div>
+    <div class="culture-card">
+      <h3>🍽️ Food & Dining</h3>
+      <p id="culture-dining"></p>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Social Norms -->
+  <div class="culture-section">
+    <h2>📋 Social Norms & Etiquette</h2>
+    <div id="social-norms-list"></div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Gestures -->
+  <div class="culture-section">
+    <h2>🤌 Gestures</h2>
+    <div class="gestures-grid" id="gestures-grid"></div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Fun Facts -->
+  <div class="culture-section">
+    <h2>💡 Interesting Facts</h2>
+    <div class="facts-grid" id="facts-grid"></div>
+  </div>
+
+</main>
+
+<script src="french.js"></script>
+<script src="italian.js"></script>
+<script src="speech.js"></script>
+<script src="app.js"></script>
+<script src="culture.js"></script>
+</body>
+</html>
