@@ -36,7 +36,8 @@ const Speech = (() => {
     return null;
   }
 
-  function speak(text, langCode, rate = 0.82) {
+  function speak(text, langCode) {
+    const rate = parseFloat(localStorage.getItem('eurolingo_rate') || '0.82');
     if (!window.speechSynthesis) {
       alert('Sorry, your browser does not support text-to-speech. Try Chrome or Edge for the best experience.');
       return;

@@ -40,6 +40,30 @@ const App = (() => {
     // Update flag display
     const flagEl = document.getElementById('current-flag');
     if (flagEl) flagEl.textContent = getCurrentData().flag;
+
+    // Speed slider
+    const savedRate = parseFloat(localStorage.getItem('eurolingo_rate') || '0.82');
+    const navEl = document.querySelector('.navbar');
+    if (navEl && !navEl.querySelector('.speed-control')) {
+      const control = document.createElement('div');
+      control.className = 'speed-control';
+      control.innerHTML = `
+        <label class="speed-label">
+          🔊 Speed
+          <input type="range" class="speed-slider" min="0.4" max="1.2" step="0.05" value="${savedRate}" />
+          <span class="speed-value">${savedRate}x</span>
+        </label>
+      `;
+      navEl.appendChild(control);
+
+      const slider = control.querySelector('.speed-slider');
+      const display = control.querySelector('.speed-value');
+      slider.addEventListener('input', () => {
+        const val = parseFloat(slider.value).toFixed(2);
+        display.textContent = `${val}x`;
+        localStorage.setItem('eurolingo_rate', val);
+      });
+    }
   }
 
   // Build a speak button

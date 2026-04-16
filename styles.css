@@ -883,3 +883,46 @@ h3 { font-size: 1.1rem; font-weight: 600; }
   .learn-grid { grid-template-columns: 1fr; }
   .gestures-grid, .facts-grid { grid-template-columns: 1fr; }
 }
+
+/* Speed slider */
+.speed-control {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  padding-left: 1rem;
+}
+
+.speed-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  color: var(--muted, #888);
+  white-space: nowrap;
+  cursor: default;
+}
+
+.speed-slider {
+  -webkit-appearance: none;
+  width: 90px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--border, #ddd);
+  outline: none;
+  cursor: pointer;
+}
+
+.speed-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent, #4f8ef7);
+  cursor: pointer;
+}
+
+.speed-value {
+  min-width: 2.5rem;
+  font-size: 0.75rem;
+  color: var(--muted, #888);
+}
