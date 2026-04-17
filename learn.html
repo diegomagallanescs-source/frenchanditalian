@@ -30,6 +30,7 @@
 
   <div class="learn-controls">
     <div class="tab-switcher">
+      <button class="select-study-btn" id="btn-select-mode">✓ Select to Study</button>
       <button class="tab-btn active" data-tab="phrases">💬 Phrases</button>
       <button class="tab-btn" data-tab="words">📖 Words</button>
     </div>
@@ -40,6 +41,19 @@
   <div class="item-count" id="item-count"></div>
 
   <div id="learn-list"></div>
+
+  <div class="selection-tray" id="selection-tray">
+  <span class="tray-count" id="tray-count">0 / 15 selected</span>
+  <div class="tray-actions" id="tray-actions">
+    <button class="tray-ready-btn" id="btn-ready" disabled>Ready →</button>
+  </div>
+  <div class="tray-choices" id="tray-choices" style="display:none">
+    <span class="tray-label">Study with:</span>
+    <button class="tray-choice-btn" id="btn-launch-flash">🃏 Flashcards</button>
+    <button class="tray-choice-btn" id="btn-launch-match">🎯 Match Game</button>
+    <button class="tray-cancel-btn" id="btn-cancel-choices">✕</button>
+  </div>
+</div>
 </main>
 
 <script src="french.js"></script>

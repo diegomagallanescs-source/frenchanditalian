@@ -50,7 +50,7 @@ const App = (() => {
       control.innerHTML = `
         <label class="speed-label">
           🔊 Speed
-          <input type="range" class="speed-slider" min="0.4" max="1.2" step="0.05" value="${savedRate}" />
+          <input type="range" class="speed-slider" min="0.1" max="1.2" step="0.05" value="${savedRate}" />
           <span class="speed-value">${savedRate}x</span>
         </label>
       `;

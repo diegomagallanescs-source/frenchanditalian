@@ -259,6 +259,25 @@ const FRENCH_DATA = {
     { id: 108, category: 'Compliments', foreign: 'Ça te va vraiment bien.', english: 'That looks really good on you.', pronunciation: 'sa tuh va vray-MON bee-AN' },
     { id: 109, category: 'Compliments', foreign: 'Tu es adorable.', english: 'You are adorable / lovely.', pronunciation: 'tew ay za-do-RA-bluh' },
     { id: 110, category: 'Compliments', foreign: 'Tu as un très beau sourire.', english: 'You have a beautiful smile.', pronunciation: 'tew ah un tray boh soo-REER' },
+  
+    // FLIRTING & ABOUT YOU
+    { id: 111, category: 'About You', foreign: 'Tu fais quoi en dehors d\'être si belle ?', english: 'What do you do besides being so beautiful?', pronunciation: 'tew fay KWAH on deh-OHR det-ruh see bel' },
+    { id: 112, category: 'About You', foreign: 'Tu es trop gentil(le) !', english: 'You\'re too sweet / too kind!', pronunciation: 'tew ay troh zhon-TEE' },
+    { id: 113, category: 'About You', foreign: 'Tu me fais rougir !', english: 'You\'re making me blush!', pronunciation: 'tew muh fay roo-ZHEER' },
+    { id: 114, category: 'About You', foreign: 'Je travaille dans la tech.', english: 'I work in tech.', pronunciation: 'zhuh tra-VY don la tek' },
+    { id: 115, category: 'About You', foreign: 'J\'ai ma propre entreprise.', english: 'I own my own business.', pronunciation: 'zhay ma PRO-pruh on-truh-PREEZ' },
+    { id: 116, category: 'About You', foreign: 'C\'est impressionnant !', english: 'That\'s impressive!', pronunciation: 'say eem-preh-syoh-NON' },
+    { id: 117, category: 'About You', foreign: 'Dis-m\'en plus !', english: 'Tell me more!', pronunciation: 'dee-MON PLOO' },
+  
+    // STILL LEARNING
+    { id: 118, category: 'Still Learning', foreign: 'Désolé(e), je ne comprends pas — j\'apprends encore le français.', english: 'Sorry, I don\'t understand — I\'m still learning French.', pronunciation: 'day-zo-LAY, zhuh nuh kom-PRON pah — zhah-PRON on-KOR luh fron-SAY' },
+
+    // LOCAL LAUGHS
+    { id: 119, category: 'Local Laughs', foreign: 'Allez les Bleus !', english: 'Come on France! (the national football team)', pronunciation: 'ah-LAY lay BLUH' },
+    { id: 120, category: 'Local Laughs', foreign: 'C\'est pas faux.', english: 'That\'s not wrong. (the very French way of agreeing)', pronunciation: 'say pah FOH' },
+    { id: 121, category: 'Local Laughs', foreign: 'Putain, c\'est bon !', english: 'Damn, that\'s good! (say this about the food)', pronunciation: 'poo-TAN, say BON' },
+    { id: 122, category: 'Local Laughs', foreign: 'Bah oui, évidemment.', english: 'Well yes, obviously. (the most French sentence possible)', pronunciation: 'bah WEE, ay-vee-da-MON' },
+    { id: 123, category: 'Local Laughs', foreign: 'Ça roule ?', english: 'Everything rolling? (casual: how\'s it going?)', pronunciation: 'sa ROOL' },
   ],
 
   culture: {
@@ -293,5 +312,7 @@ const FRENCH_DATA = {
     { emoji: '🎨', title: 'Art Capital', text: 'The Louvre is the most visited art museum in the world. France has produced some of history\'s greatest artists, writers, and philosophers.' },
     { emoji: '🧀', title: 'Cheese Nation', text: 'France produces over 1,000 varieties of cheese. Charles de Gaulle famously said "How can you govern a country which has 246 varieties of cheese?"' },
     { emoji: '🚇', title: 'Paris Metro', text: 'The Paris Métro has 302 stations — no point in Paris is more than 500m from a station. It\'s one of the densest metro systems in the world.' },
-  ]
+  ],
+
+  
 };

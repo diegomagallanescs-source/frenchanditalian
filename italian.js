@@ -259,6 +259,25 @@ const ITALIAN_DATA = {
     { id: 108, category: 'Compliments', foreign: 'Ti sta davvero bene.', english: 'That looks really good on you.', pronunciation: 'tee stah dav-VEH-roh BEH-neh' },
     { id: 109, category: 'Compliments', foreign: 'Sei adorabile.', english: 'You are adorable / lovely.', pronunciation: 'say ah-doh-RAH-bee-leh' },
     { id: 110, category: 'Compliments', foreign: 'Hai un sorriso bellissimo.', english: 'You have a beautiful smile.', pronunciation: 'eye oon sor-REE-zoh bel-LEES-see-moh' },
+  
+    // FLIRTING & ABOUT YOU
+    { id: 111, category: 'About You', foreign: 'Cosa fai oltre ad essere così bella?', english: 'What do you do besides being so beautiful?', pronunciation: 'KOH-zah FYE OL-treh ahd ES-seh-reh koh-ZEE BEL-lah' },
+    { id: 112, category: 'About You', foreign: 'Sei troppo gentile!', english: 'You\'re too sweet / too kind!', pronunciation: 'say TROP-poh jen-TEE-leh' },
+    { id: 113, category: 'About You', foreign: 'Mi fai arrossire!', english: 'You\'re making me blush!', pronunciation: 'mee FYE ar-ros-SEE-reh' },
+    { id: 114, category: 'About You', foreign: 'Lavoro nel settore tech.', english: 'I work in tech.', pronunciation: 'la-VOH-roh nel set-TOH-reh tek' },
+    { id: 115, category: 'About You', foreign: 'Ho la mia azienda.', english: 'I own my own business.', pronunciation: 'oh la MEE-ah ah-TSYEN-dah' },
+    { id: 116, category: 'About You', foreign: 'È impressionante!', english: 'That\'s impressive!', pronunciation: 'eh eem-pres-syoh-NAN-teh' },
+    { id: 117, category: 'About You', foreign: 'Dimmi di più!', english: 'Tell me more!', pronunciation: 'DEEM-mee dee PYOO' },
+  
+    // STILL LEARNING
+    { id: 118, category: 'Still Learning', foreign: 'Mi dispiace, non capisco — sto ancora imparando l\'italiano.', english: 'Sorry, I don\'t understand — I\'m still learning Italian.', pronunciation: 'mee dees-PYAH-cheh, non kah-PEE-skoh — stoh an-KOH-rah eem-pah-RAN-doh lee-tah-LYAH-noh' },
+
+    // LOCAL LAUGHS
+    { id: 119, category: 'Local Laughs', foreign: 'Forza Azzurri !', english: 'Come on Italy! (the national football team)', pronunciation: 'FOR-tsah ad-DZOOR-ree' },
+    { id: 120, category: 'Local Laughs', foreign: 'Dai !', english: 'Come on! / No way! / Go ahead! (does everything)', pronunciation: 'DYE' },
+    { id: 121, category: 'Local Laughs', foreign: 'Mamma mia, che buono !', english: 'Oh my goodness, how good! (say this about the food)', pronunciation: 'MAM-mah MEE-ah, keh BWOH-noh' },
+    { id: 122, category: 'Local Laughs', foreign: 'Ma va !', english: 'Oh come on! / No way! (playful disbelief)', pronunciation: 'mah VAH' },
+    { id: 123, category: 'Local Laughs', foreign: 'Tutto a posto ?', english: 'Everything in place? (the Italian "how\'s it going?")', pronunciation: 'TOOT-toh ah POS-toh' },
   ],
 
   culture: {

@@ -8,9 +8,19 @@ let currentCategory = 'All';
 let currentTab = 'phrases'; // 'phrases' or 'words'
 
 function buildDeck() {
+  const customRaw = localStorage.getItem('eurolingo_custom_set');
+  if (customRaw) {
+    try {
+      const customItems = JSON.parse(customRaw);
+      currentDeck = isShuffled ? App.shuffle(customItems) : [...customItems];
+      currentIndex = 0;
+      isFlipped = false;
+      return;
+    } catch(e) {}
+  }
+
   const data = App.getCurrentData();
   const source = currentTab === 'words' ? data.words : data.phrases;
-
   if (currentCategory === 'All') {
     currentDeck = isShuffled ? App.shuffle(source) : [...source];
   } else {
@@ -145,6 +155,26 @@ function updateNavButtons() {
 
 function initFlashcards() {
   App.initNav();
+
+  // Custom set banner
+  const customRaw = localStorage.getItem('eurolingo_custom_set');
+  if (customRaw) {
+    try {
+      const customItems = JSON.parse(customRaw);
+      const banner = document.createElement('div');
+      banner.className = 'custom-set-banner';
+      banner.innerHTML = `📌 Custom set — ${customItems.length} items &nbsp;
+        <button class="custom-clear-btn" id="btn-clear-custom">✕ Back to full deck</button>`;
+      document.querySelector('.page-header').after(banner);
+      document.getElementById('btn-clear-custom').addEventListener('click', () => {
+        localStorage.removeItem('eurolingo_custom_set');
+        window.location.reload();
+      });
+      // Hide category/tab UI when using custom set
+      document.querySelector('.tab-switcher').style.display = 'none';
+      document.getElementById('category-tabs').style.display = 'none';
+    } catch(e) {}
+  }
 
   const data = App.getCurrentData();
   document.getElementById('lang-title').textContent = `${data.flag} ${data.language} Flashcards`;

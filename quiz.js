@@ -12,13 +12,19 @@ let currentTab = 'phrases';
 const ROUND_SIZE = 8;
 
 function buildPool() {
+  const customRaw = localStorage.getItem('eurolingo_custom_set');
+  if (customRaw) {
+    try {
+      matchPool = JSON.parse(customRaw);
+      return;
+    } catch(e) {}
+  }
+
   const data = App.getCurrentData();
   const source = currentTab === 'words' ? data.words : data.phrases;
-  if (currentCategory === 'All') {
-    matchPool = [...source];
-  } else {
-    matchPool = source.filter(item => item.category === currentCategory);
-  }
+  matchPool = currentCategory === 'All'
+    ? [...source]
+    : source.filter(item => item.category === currentCategory);
 }
 
 function startRound() {
@@ -167,6 +173,25 @@ function renderCategoryButtons() {
 
 function initQuiz() {
   App.initNav();
+
+  // Custom set banner
+  const customRaw = localStorage.getItem('eurolingo_custom_set');
+  if (customRaw) {
+    try {
+      const customItems = JSON.parse(customRaw);
+      const banner = document.createElement('div');
+      banner.className = 'custom-set-banner';
+      banner.innerHTML = `📌 Custom set — ${customItems.length} items &nbsp;
+        <button class="custom-clear-btn" id="btn-clear-custom">✕ Back to full deck</button>`;
+      document.querySelector('.match-header').after(banner);
+      document.getElementById('btn-clear-custom').addEventListener('click', () => {
+        localStorage.removeItem('eurolingo_custom_set');
+        window.location.reload();
+      });
+      document.querySelector('.tab-switcher').style.display = 'none';
+      document.getElementById('quiz-category-tabs').style.display = 'none';
+    } catch(e) {}
+  }
 
   const data = App.getCurrentData();
   document.getElementById('lang-title').textContent = `${data.flag} ${data.language} Matching Game`;

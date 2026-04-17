@@ -926,3 +926,171 @@ h3 { font-size: 1.1rem; font-weight: 600; }
   font-size: 0.75rem;
   color: var(--muted, #888);
 }
+
+/* ── Select to Study button ─────────────────────── */
+.select-study-btn {
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  border: 2px solid var(--accent, #4f8ef7);
+  background: transparent;
+  color: var(--accent, #4f8ef7);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+.select-study-btn:hover,
+.select-study-btn.active {
+  background: var(--accent, #4f8ef7);
+  color: #fff;
+}
+
+/* ── Selectable cards ───────────────────────────── */
+.learn-card.selectable {
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  transition: transform 0.1s, box-shadow 0.1s, border-color 0.15s;
+  border: 2px solid transparent;
+}
+.learn-card.selectable:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+.learn-card.card-selected {
+  border-color: var(--accent, #4f8ef7) !important;
+  background: color-mix(in srgb, var(--accent, #4f8ef7) 8%, transparent);
+}
+.card-checkmark {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  background: var(--border, #ddd);
+  color: transparent;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  transition: background 0.15s, color 0.15s;
+}
+.card-selected .card-checkmark {
+  background: var(--accent, #4f8ef7);
+  color: #fff;
+}
+
+/* ── Selection tray ─────────────────────────────── */
+.selection-tray {
+  position: fixed;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--card, #fff);
+  border: 2px solid var(--accent, #4f8ef7);
+  border-radius: 999px;
+  padding: 0.65rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  transition: bottom 0.3s cubic-bezier(.34,1.56,.64,1);
+  z-index: 200;
+  white-space: nowrap;
+}
+.selection-tray.tray-visible {
+  bottom: 1.5rem;
+}
+.tray-count {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text, #222);
+}
+.tray-actions, .tray-choices {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.tray-ready-btn {
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--accent, #4f8ef7);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.tray-ready-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.tray-label {
+  font-size: 0.8rem;
+  color: var(--muted, #888);
+}
+.tray-choice-btn {
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 2px solid var(--accent, #4f8ef7);
+  background: transparent;
+  color: var(--accent, #4f8ef7);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.tray-choice-btn:hover {
+  background: var(--accent, #4f8ef7);
+  color: #fff;
+}
+.tray-cancel-btn {
+  background: none;
+  border: none;
+  color: var(--muted, #888);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0 0.2rem;
+}
+@keyframes tray-shake {
+  0%, 100% { transform: translateX(-50%); }
+  20%       { transform: translateX(calc(-50% - 6px)); }
+  60%       { transform: translateX(calc(-50% + 6px)); }
+}
+.selection-tray.tray-shake {
+  animation: tray-shake 0.4s ease;
+}
+
+/* ── Custom set banner ──────────────────────────── */
+.custom-set-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: color-mix(in srgb, var(--accent, #4f8ef7) 10%, transparent);
+  border: 1.5px solid var(--accent, #4f8ef7);
+  border-radius: 10px;
+  padding: 0.55rem 1.2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text, #222);
+  margin-bottom: 1.25rem;
+}
+.custom-clear-btn {
+  background: none;
+  border: 1.5px solid var(--muted, #aaa);
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.75rem;
+  color: var(--muted, #888);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+.custom-clear-btn:hover {
+  border-color: var(--text, #222);
+  color: var(--text, #222);
+}
